@@ -45,9 +45,10 @@ class _testPageState extends State<testPage> {
                     Align(
                       alignment: Alignment.topRight,
                       child: Container(
-                        color: Colors.white,
-                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(8.0)),
-                        
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(50),
+                        ),
                         margin: const EdgeInsets.only(top: 8, right: 8),
                         child: IconButton(
                           icon: (_isFavorited
