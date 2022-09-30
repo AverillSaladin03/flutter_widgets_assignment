@@ -35,7 +35,7 @@ class _testPageState extends State<testPage> {
               gradient: LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
-                colors: [Color.fromARGB(255, 215, 195, 182), Color.fromARGB(180, 237, 132, 13)])
+                colors: [Color.fromARGB(255, 215, 195, 182), Color.fromARGB(150, 237, 132, 13)])
             ),
             width: double.infinity,
             height: double.infinity,
