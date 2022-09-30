@@ -31,7 +31,12 @@ class _testPageState extends State<testPage> {
         ),
         body: SafeArea(
           child: Container(
-            color: Color.fromARGB(103, 237, 132, 13),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [Color.fromARGB(255, 215, 195, 182), Color.fromARGB(180, 237, 132, 13)])
+            ),
             width: double.infinity,
             height: double.infinity,
             alignment: Alignment.topCenter,
