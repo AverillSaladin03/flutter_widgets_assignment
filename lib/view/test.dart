@@ -1,11 +1,26 @@
 part of 'pages.dart';
 
-var simulacraDesc =
-    "Tower of Fantasy juga memiliki 'Simulacra', yang terdengar sangat mirip dengan 'Simulacrum', tetapi merupakan sesuatu yang berbeda. Dalam gim, Simulacra adalah karakter senjata yang dapat Anda buka di Simulacrum. Karakter ini adalah pahlawan kuno yang kesadarannya masing-masing telah ditransfer ke Kecerdasan Buatan yang dapat dilengkapi oleh pemain. Setelah pemain membuka kunci Simulacra, mereka dapat memanggil Simulacra itu, yang pada dasarnya melengkapi karakter. Kemudian, karakter pemain akan mengambil bentuk, kemampuan, dan kepribadian dari Simulacra tersebut. Kedengarannya rumit, tetapi pikirkan seperti ini: Simulacrum adalah pasar, dan Simulacra adalah karakter berbeda yang dapat Anda buka di pasar itu. Satu-satunya perbedaan di Tower of Fantasy adalah bahwa Anda tidak 'membeli' karakter seperti Anda mungkin barang di pasar tradisional. Sebagai gantinya, Anda harus membeli paket dalam permainan, dan mengandalkan sedikit keberuntungan untuk mendapatkan Simulacra baru.";
+class testPage extends StatefulWidget {
+  const testPage({super.key});
 
-class homePage extends StatelessWidget {
-  const homePage({super.key});
+  @override
+  State<testPage> createState() => _testPageState();
+}
 
+class _testPageState extends State<testPage> {
+  bool _isFavorited = false;
+
+  void _toggleFavorite() {
+    setState(() {
+      if (_isFavorited) {
+        _isFavorited = false;
+      } else {
+        _isFavorited = true;
+      }
+    });
+  }
+
+  IconData icon = Icons.favorite_border;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,33 +39,34 @@ class homePage extends StatelessWidget {
               children: [
                 // Cover Images + Favorite
                 Flexible(
-                    flex: 4,
-                    child: Stack(children: [
-                      Image.asset("assets/images/nemesis.jpg"),
-                      Align(
-                        alignment: Alignment.topRight,
-                        child: Container(
-                          margin: EdgeInsets.only(top: 8, right: 8),
-                          child: FloatingActionButton(
-                              onPressed: () {},
-                              backgroundColor: Colors.white,
-                              child: Icon(
-                                Icons.favorite,
-                                color: Colors.grey.withOpacity(0.5),
-                                size: 30,
-                              )),
+                  flex: 4,
+                  child: Stack(children: [
+                    Image.asset("assets/images/nemesis.jpg"),
+                    Align(
+                      alignment: Alignment.topRight,
+                      child: Container(
+                        color: Colors.white,
+                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(8.0)),
+                        
+                        margin: const EdgeInsets.only(top: 8, right: 8),
+                        child: IconButton(
+                          icon: (_isFavorited
+                              ? const Icon(Icons.favorite)
+                              : const Icon(Icons.favorite_border)),
+                          color: Colors.red,
+                          onPressed: _toggleFavorite,
                         ),
                       ),
-                    ])),
+                    ),
+                  ]),
+                ),
 
                 // List Images
                 Flexible(
                     flex: 2,
                     child: Container(
-                      color: Colors.white,
                       margin: EdgeInsets.only(left: 16, right: 16, bottom: 4),
                       width: double.infinity,
-                      height: double.infinity,
                       child: SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Row(
