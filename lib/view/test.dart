@@ -39,15 +39,15 @@ class _testPageState extends State<testPage> {
             ),
             width: double.infinity,
             height: double.infinity,
-            alignment: Alignment.topCenter,
             child: Column(
               children: [
                 // Cover Images + Favorite
                 Flexible(
-                  flex: 4,
-                  child: Stack(children: [
-                    Image.asset("assets/images/nemesis.jpg"),
-                    Align(
+                  flex: 3,
+                  child: Stack(
+                    children: [
+                      Image.asset("assets/images/nemesis.jpg", width: double.infinity, height: double.infinity, fit: BoxFit.cover,),
+                      Align(
                       alignment: Alignment.topRight,
                       child: Container(
                         decoration: BoxDecoration(
@@ -71,31 +71,29 @@ class _testPageState extends State<testPage> {
                 Flexible(
                     flex: 2,
                     child: Container(
-                      margin: EdgeInsets.only(left: 16, right: 16, bottom: 4),
-                      width: double.infinity,
+                      margin: EdgeInsets.only(top: 8, left: 16, right: 16, bottom: 4),
+                      // width: double.infinity,
                       child: SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Container(
-                              height: 100,
                               margin: EdgeInsets.only(right: 8.0),
                               child:
-                                  Image.asset("assets/images/nemesisIcon.png"),
+                                  Image.asset("assets/images/nemesisIcon.png", 
+                              fit: BoxFit.fitHeight,),
                             ),
                             Container(
-                              height: 100,
                               margin: EdgeInsets.only(right: 8.0),
                               child: Image.asset("assets/images/friggIcon.png"),
                             ),
                             Container(
-                              height: 100,
                               margin: EdgeInsets.only(right: 8.0),
                               child:
                                   Image.asset("assets/images/claudiaIcon.png"),
                             ),
                             Container(
-                              height: 100,
                               margin: EdgeInsets.only(right: 8.0),
                               child:
                                   Image.asset("assets/images/cobaltbIcon.png"),
@@ -103,11 +101,26 @@ class _testPageState extends State<testPage> {
                           ],
                         ),
                       ),
-                    )),
+                    )
+                  ),
+                
+                //Title
+                Flexible(
+                  flex: 1,
+                  child: 
+                    Text("Definisi :", 
+                    textAlign: TextAlign.start,
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),  
+                  ),
+                ),
+                
                 // Text Deskripsi
                 Flexible(
-                    flex: 5,
-                    child: Stack(children: [
+                    flex: 4,
+                    child: 
                       Container(
                         width: double.infinity,
                         height: double.infinity,
@@ -123,8 +136,7 @@ class _testPageState extends State<testPage> {
                           ),
                         ),
                       )
-                    ])),
-              ],
+                    )],
             ),
           ),
         ));
