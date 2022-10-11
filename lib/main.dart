@@ -13,6 +13,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
+      theme: ThemeData(
+        primarySwatch: Colors.brown,
+      ),
       routes: {
         '/': (context) => homePage(),
         '/createSimulacra': (context) => CreateSimulacra(),

@@ -48,7 +48,7 @@ class _homePageState extends State<homePage> {
               children: [
                 // Cover Images + Favorite
                 Flexible(
-                  flex: 3,
+                  flex: 4,
                   child: Stack(children: [
                     Image.asset(
                       "assets/images/nemesis.jpg",
@@ -118,7 +118,7 @@ class _homePageState extends State<homePage> {
                 Flexible(
                   flex: 1,
                   child: Text(
-                    "Definisi :",
+                    "Definition :",
                     textAlign: TextAlign.start,
                     style: TextStyle(
                       fontSize: 20,
@@ -129,7 +129,7 @@ class _homePageState extends State<homePage> {
 
                 // Text Deskripsi
                 Flexible(
-                    flex: 4,
+                    flex: 5,
                     child: Stack(
                       children: [
                         Container(
@@ -154,11 +154,15 @@ class _homePageState extends State<homePage> {
                               onPressed: () {
                                 Navigator.pushNamed(context, '/createSimulacra');
                               },
-                              child: Text("Create Simulacra"),
+                              child: Text("ADD SIMULACRA"),
                               style: ElevatedButton.styleFrom(
                                   primary: Color.fromARGB(255, 237, 132, 13),
+                                  foregroundColor: Colors.black,
                                   textStyle: TextStyle(fontWeight: FontWeight.bold),
                                   elevation: 4,
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius:
+                                          BorderRadius.circular(32)),
                               ),
                           ),
                         ),
