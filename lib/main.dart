@@ -12,7 +12,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: testPage()
+      initialRoute: '/',
+      routes: {
+        '/': (context) => homePage(),
+        '/createSimulacra': (context) => CreateSimulacra(),
+      },
     );
   }
 }
